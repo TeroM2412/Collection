@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A personal picture collection.">
+  <title>Tero's Collection homepage</title>
+  <!-- Sunflower browser-tab icon; no separate favicon file is required. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌻%3C/text%3E%3C/svg%3E">
+  <style>
+    :root { --background:#fafaf7; --text:#222; --red:#a21818; --green:#008000; --border:#d8d8d2; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--background); color:var(--text); font:16px Arial,Helvetica,sans-serif; }
+    main { width:min(1320px,calc(100% - 48px)); margin:0 auto; padding:58px 0 52px; }
+    .page-title { width:max-content; max-width:100%; margin:0 auto 54px; padding:4px 18px; border:1px solid var(--border); font-size:1.05rem; font-weight:400; line-height:1.25; text-align:left; }
+    .page-title strong { display:block; color:var(--red); font-weight:400; }
+    .garden { display:grid; grid-template-columns:minmax(250px,315px) repeat(2,minmax(250px,1fr)); gap:clamp(38px,6vw,96px); align-items:start; }
+    .featured { margin-top:12px; }
+    .featured-frame { padding:7px 18px 8px; border:1px solid var(--border); }
+    .featured-frame > a:first-child { display:block; margin-bottom:2px; color:var(--green); }
+    .featured img { display:block; width:100%; height:auto; max-height:500px; object-fit:cover; }
+    .featured-caption { width:max-content; margin:8px auto 0; padding:1px 18px; border:1px solid var(--border); color:var(--red); }
+    .list-column { min-width:0; }
+    .picture-type { margin-bottom:32px; }
+    .picture-type h2 { display:inline-block; min-width:86px; margin:0 0 18px; padding:2px 16px; border:1px solid var(--border); color:var(--red); font-size:1rem; font-weight:400; text-align:center; }
+    .picture-list { margin:0; padding:0; list-style:none; }
+    .picture-list li { width:max-content; max-width:100%; margin:2px 0; padding:1px 16px; border:1px solid var(--border); line-height:1.15; }
+    .picture-list a { color:var(--green); overflow-wrap:anywhere; }
+    .picture-list .count { color:var(--red); white-space:nowrap; }
+    a:hover { text-decoration-thickness:2px; }
+    a:focus-visible { outline:2px solid #111; outline-offset:3px; }
+    @media (max-width:900px) {
+      main { width:min(100% - 30px,720px); padding-top:32px; }
+      .garden { grid-template-columns:minmax(220px,300px) 1fr; gap:42px; }
+      .list-column:last-child { grid-column:2; }
+    }
+    @media (max-width:620px) {
+      .page-title { margin-bottom:36px; }
+      .garden { grid-template-columns:1fr; gap:38px; }
+      .featured { width:min(100%,330px); }
+      .list-column:last-child { grid-column:auto; }
+      .picture-list li { width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Change these two lines to your page title and subtitle. -->
+    <h1 class="page-title"><strong>my picture garden</strong>mostly images</h1>
+
+    <div class="garden">
+      <!-- One featured picture on the left. -->
+      <section class="featured">
+        <div class="featured-frame">
+          <a href="images/featured.jpg" target="_blank">featured.jpg</a>
+          <a href="images/featured.jpg" target="_blank"><img src="images/featured.jpg" alt="Featured picture"></a>
+        </div>
+        <div class="featured-caption">my featured picture</div>
+      </section>
+
+      <!-- First vertical list column. -->
+      <div class="list-column">
+        <section class="picture-type">
+          <h2>nature</h2>
+          <ul class="picture-list">
+            <li><a href="images/nature-01.jpg" target="_blank">nature-01.jpg</a> <span class="count">(picture)</span></li>
+            <li><a href="images/nature-02.jpg" target="_blank">nature-02.jpg</a> <span class="count">(picture)</span></li>
+            <li><a href="images/nature-03.jpg" target="_blank">nature-03.jpg</a> <span class="count">(picture)</span></li>
+            <li><a href="images/nature-04.jpg" target="_blank">nature-04.jpg</a> <span class="count">(picture)</span></li>
+          </ul>
+        </section>
+        <section class="picture-type">
+          <h2>travel</h2>
+          <ul class="picture-list">
+            <li><a href="images/travel-01.jpg" target="_blank">travel-01.jpg</a> <span class="count">(picture)</span></li>
+            <li><a href="images/travel-02.jpg" target="_blank">travel-02.jpg</a> <span class="count">(picture)</span></li>
+            <li><a href="images/travel-03.jpg" target="_blank">travel-03.jpg</a> <span class="count">(picture)</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Second vertical list column. -->
+      <div class="list-column">
+        <section class="picture-type">
+          <h2>portraits</h2>
+          <ul class="picture-list">
+            <li><a href="images/portrait-01.jpg" target="_blank">portrait-01.jpg</a> <span class="count">(picture)</span></li>
+            <li><a href="images/portrait-02.jpg" target="_blank">portrait-02.jpg</a> <span class="count">(picture)</span></li>
+            <li><a href="images/portrait-03.jpg" target="_blank">portrait-03.jpg</a> <span class="count">(picture)</span></li>
+            <li><a href="images/portrait-04.jpg" target="_blank">portrait-04.jpg</a> <span class="count">(picture)</span></li>
+          </ul>
+        </section>
+        <section class="picture-type">
+          <h2>city</h2>
+          <ul class="picture-list">
+            <li><a href="images/city-01.jpg" target="_blank">city-01.jpg</a> <span class="count">(picture)</span></li>
+            <li><a href="images/city-02.jpg" target="_blank">city-02.jpg</a> <span class="count">(picture)</span></li>
+            <li><a href="images/city-03.jpg" target="_blank">city-03.jpg</a> <span class="count">(picture)</span></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
