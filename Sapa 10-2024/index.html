@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Photo gallery</title>
+  <meta name="description" content="A personal picture collection.">
+  <title>Tero's Collection homepage/Sapa 10-2024 </title>
+  <!-- Sunflower browser-tab icon; no separate favicon file is required. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌻%3C/text%3E%3C/svg%3E">
 
   <style>
     body {
@@ -30,6 +33,74 @@
       height: auto;
       margin-top: 6px;
     }
+
+    /* Match the homepage */
+:root {
+  --background: #fafaf7;
+  --text: #222;
+  --red: #a21818;
+  --green: #008000;
+  --border: #d8d8d2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: min(1320px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 58px 0 52px;
+  background: var(--background);
+  color: var(--text);
+  font: 16px Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: var(--green);
+}
+
+h1 {
+  width: fit-content;
+  max-width: 100%;
+  margin: 24px auto 54px;
+  padding: 4px 18px;
+  border: 1px solid var(--border);
+  color: var(--red);
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+/* Keep the gallery previews */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 30px 16px;
+}
+
+.photo {
+  max-width: 100%;
+  padding: 7px 18px 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+.photo img {
+  display: block;
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+  margin-top: 6px;
+}
+
+@media (max-width: 620px) {
+  body {
+    width: calc(100% - 30px);
+    padding-top: 32px;
+  }
+}
+    
   </style>
 </head>
 
