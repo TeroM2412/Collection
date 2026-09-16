@@ -1,17 +1,56 @@
-<a href="cats/" class="folder-button">📁 Sapa 10-2024</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo gallery</title>
 
-<style>
-  .folder-button {
-    display: inline-block;
-    padding: 12px 20px;
-    background: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    color: #333;
-    text-decoration: none;
-  }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 16px;
+    }
 
-  .folder-button:hover {
-    background: #e0e0e0;
-  }
-</style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .photo {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    .photo img {
+      display: block;
+      width: 250px;
+      max-width: 100%;
+      height: auto;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="../">← Back to homepage</a>
+  <h1>Photo gallery</h1>
+
+  <div class="gallery">
+    <div class="photo">
+      <a href="IMG_0559.JPG">
+        IMG_0559.JPG
+        <img src="IMG_0559.JPG" alt="IMG_0559.JPG" loading="lazy">
+      </a>
+    </div>
+
+    <div class="photo">
+      <a href="IMG_0544.JPG">
+        IMG_0544.JPG
+        <img src="IMG_0544.JPG" alt="IMG_0544.JPG" loading="lazy">
+      </a>
+    </div>
+  </div>
+</body>
+</html>
