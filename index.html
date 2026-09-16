@@ -113,5 +113,73 @@
       </div>
     </div>
   </main>
+  
+<dialog id="pictureViewer">
+  <button id="closePicture" type="button">Close ✕</button>
+  <img id="fullPicture" alt="">
+</dialog>
+
+<style>
+  #pictureViewer {
+    border: none;
+    padding: 12px;
+    max-width: 95vw;
+    max-height: 95vh;
+    background: #fff;
+  }
+
+  #pictureViewer::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+  }
+
+  #closePicture {
+    display: block;
+    margin: 0 0 10px auto;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+
+  #fullPicture {
+    display: block;
+    max-width: 85vw;
+    max-height: 75vh;
+    object-fit: contain;
+  }
+</style>
+
+<script>
+  const viewer = document.getElementById("pictureViewer");
+  const fullPicture = document.getElementById("fullPicture");
+
+  document.querySelectorAll('a[href^="images/"]').forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+
+      fullPicture.src = link.href;
+      fullPicture.alt =
+        link.querySelector("img")?.alt || link.textContent.trim();
+
+      viewer.showModal();
+    });
+  });
+
+  document.getElementById("closePicture").addEventListener("click", () => {
+    viewer.close();
+  });
+
+  viewer.addEventListener("click", event => {
+    const bounds = viewer.getBoundingClientRect();
+
+    if (
+      event.clientX < bounds.left ||
+      event.clientX > bounds.right ||
+      event.clientY < bounds.top ||
+      event.clientY > bounds.bottom
+    ) {
+      viewer.close();
+    }
+  });
+</script>
+  
 </body>
 </html>
